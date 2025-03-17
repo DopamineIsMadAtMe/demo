@@ -2,7 +2,11 @@ version: '3.8'
 
 services:
   demo:
-    image: gradle:7.6-jdk11
+    volumes: 
+      - .:/home/gradle/project
+    #workingdir: /home/gradle/project
+    image: wadebanman/demo:b518c59
+    container_name: demo
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -10,7 +14,8 @@ services:
       - 8080:8080
     stdin_open: true
     tty: true
+
     
     
-    #command: ["gradle", "build"]
+    command: ["./gradlew", "appRun"]
     #working_dir: /home/desktop_app
