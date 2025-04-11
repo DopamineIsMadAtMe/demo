@@ -23,7 +23,7 @@ pipeline {
     // place that happens.
     stage('Build') {
       steps {
-        sh './gradlew clean assemble'
+        sh 'docker-compose up -d demo'
       }
     }
 
