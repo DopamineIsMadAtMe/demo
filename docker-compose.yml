@@ -19,3 +19,14 @@ services:
     
     command: ["./gradlew", "appRun"]
     #working_dir: /home/desktop_app
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+    - 8081:8080
+    container_name: jenkins
+    volumes:
+    - /workspaces/demo/jenkins_home:/var/jenkins_home
+    - /var/run/docker.sock:/var/run/docker.sock
