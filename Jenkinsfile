@@ -8,8 +8,6 @@ pipeline {
         // This is set so that the Python API tests will recognize it
         // and go through the Zap proxy waiting at 9888
         HTTP_PROXY = 'http://127.0.0.1:9888'
-        JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'
-        PATH = "${JAVA_HOME}/bin:${env.PATH}"
    }
 
   stages {
