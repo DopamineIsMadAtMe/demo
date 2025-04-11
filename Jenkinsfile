@@ -13,7 +13,14 @@ pipeline {
    }
 
   stages {
-
+    stage('Debug Environment') {
+            steps {
+                sh '''
+                    echo "JAVA_HOME: $JAVA_HOME"
+                    java -version
+                '''
+            }
+        }
     // build the war file (the binary).  This is the only
     // place that happens.
     stage('Build') {
