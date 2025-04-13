@@ -23,7 +23,7 @@ pipeline {
     // place that happens.
     stage('Build') {
       steps {
-        sh 'docker-compose up -d demo' //Issue with Jenkins secrets??
+        sh 'docker build -t wadebanman/demo:b518c59 .'
       }
     }
 
