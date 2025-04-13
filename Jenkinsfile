@@ -91,6 +91,9 @@ pipeline {
         JAVA_HOME = '/usr/lib/jvm/java-11-openjdk'
         PATH = "${JAVA_HOME}/bin:${PATH}"
       }
+      steps{
+        sh './gradlew sonarqube -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login="admin" -Dsonar.password="password1"'
+      }
     }
   }
 
