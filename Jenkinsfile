@@ -22,7 +22,7 @@ pipeline {
         PATH = "${JAVA_HOME}/bin:${PATH}"
       }
       steps {
-        sh 'docker build -t wadebanman/demo:b518c59 .'
+        sh './gradlew clean assemble'
       }
     }
 
